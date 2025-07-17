@@ -1,0 +1,21 @@
+{
+  /**
+
+    Settings & Configuration
+
+  */
+  "name": "scripts",
+  "private": true,
+  "version": "0.1.0",
+  "prettier": "@acme/prettier-config",
+  /**
+
+    Scripts & Dependencies
+
+  */
+  "devDependencies": {
+    "@acme/prettier-config": "workspace:*",
+    "@types/bun": "catalog:",
+    "typescript": "catalog:"
+  }
+}

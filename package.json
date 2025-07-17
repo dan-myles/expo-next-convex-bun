@@ -19,13 +19,15 @@
     "packages": [
       "apps/*",
       "packages/*",
-      "tooling/*"
+      "tooling/*",
+      "scripts"
     ],
     // ** Global Packages **
     "catalog": {
       // General
       "typescript": "^5.8.3",
       "zod": "^4.0.5",
+      "@types/bun": "^1.2.18",
       // Tooling
       "prettier": "^3.6.2",
       "prettier-plugin-tailwindcss": "^0.6.14",
