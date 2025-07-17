@@ -1,9 +1,4 @@
 {
-  /**
-
-    Settings & Configuration
-
-  */
   "name": "@acme/prettier-config",
   "private": true,
   "version": "0.1.0",
@@ -12,11 +7,6 @@
   "exports": {
     ".": "./index.js"
   },
-  /**
-
-    Scripts & Dependencies
-
-  */
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",

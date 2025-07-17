@@ -20,7 +20,7 @@
       "apps/*",
       "packages/*",
       "tooling/*",
-      "scripts"
+      "scripts/"
     ],
     // ** Global Packages **
     "catalog": {

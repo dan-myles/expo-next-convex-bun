@@ -1,9 +1,4 @@
 {
-  /**
-
-    Settings & Configuration
-
-  */
   "name": "@acme/eslint-config",
   "private": true,
   "type": "module",
@@ -13,11 +8,6 @@
     "./nextjs": "./nextjs.js",
     "./react": "./react.js"
   },
-  /**
-
-    Scripts & Dependencies
-
-  */
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
