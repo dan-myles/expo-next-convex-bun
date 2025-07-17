@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+dist/
+build/
+
+# Generated files
+convex/_generated/
+**/_generated/
+
+# Specific files
+*.min.js
+coverage/
+.next/
+.turbo/
+
+# Environment files
+.env
+.env.local

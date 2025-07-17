@@ -3,14 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "prettier": "@acme/prettier-config",
+  "exports": {
+    "./generated/*": "./convex/_generated/*"
+  },
   "scripts": {
+    "init": "convex dev --until-success",
     "dev": "convex dev",
-    "init": "convex dev --until-success"
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false",
+    "format": "prettier --check . --ignore-path ../../.prettierignore",
+    "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "clean": "git clean -xdf dist node_modules .cache"
   },
   "dependencies": {
     "convex": "^1.25.0"
   },
   "devDependencies": {
+    "@acme/eslint-config": "workspace:*",
+    "@acme/prettier-config": "workspace:*",
+    "@acme/tsconfig": "workspace:*",
     "typescript": "catalog:"
   }
 }

@@ -10,5 +10,5 @@
     "noEmit": true
   },
   "include": ["./**/*"],
-  "exclude": ["./convex/_generated"]
+  "exclude": ["node_modules/"]
 }
