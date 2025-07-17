@@ -1,14 +1,14 @@
 import { readdir, readFile, writeFile, stat } from "fs/promises";
 import { join } from "path";
-import { prompt } from "@clack/prompts";
+import * as prompts from "@clack/prompts";
 import { existsSync } from "fs";
 
-interface ReplaceOptions {
+type ReplaceOptions = {
   oldPrefix: string;
   newPrefix: string;
   excludeDirs: string[];
   includeExtensions: string[];
-}
+};
 
 async function getAllFiles(
   dir: string,
@@ -97,8 +97,7 @@ async function main() {
     "   • This will replace ALL instances of @oldPrefix/* with @newPrefix/*\n",
   );
 
-  const shouldContinue = await prompt({
-    type: "confirm",
+  const shouldContinue = await prompts.confirm({
     message: "Are you sure you want to continue?",
     initialValue: false,
   });
@@ -109,8 +108,7 @@ async function main() {
   }
 
   // Get user input
-  const oldPrefix = (await prompt({
-    type: "text",
+  const oldPrefix = (await prompts.text({
     message: "Enter the current prefix to replace (without @):",
     placeholder: "acme",
     validate: (value) => {
@@ -121,8 +119,7 @@ async function main() {
     },
   })) as string;
 
-  const newPrefix = (await prompt({
-    type: "text",
+  const newPrefix = (await prompts.text({
     message: "Enter the new prefix:",
     placeholder: "mycompany",
     validate: (value) => {
@@ -141,8 +138,7 @@ async function main() {
     `\n🔄 About to replace: @${oldPrefix.trim()}/* → @${newPrefix.trim()}/*`,
   );
 
-  const finalConfirm = await prompt({
-    type: "confirm",
+  const finalConfirm = await prompts.confirm({
     message: "Proceed with replacement?",
     initialValue: false,
   });
@@ -196,7 +192,7 @@ async function main() {
     // Process files
     let totalMatches = 0;
     let changedFiles = 0;
-    const results: Array<{ file: string; matches: number }> = [];
+    const results: { file: string; matches: number }[] = [];
 
     for (const file of files) {
       try {
