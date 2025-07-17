@@ -9,10 +9,6 @@ runs:
       with:
         bun-version: latest
 
-    - name: Initialize environment
-      shell: bash
-      run: cp .env.example .env
-
     - name: Install dependencies
       shell: bash
       run: bun install
