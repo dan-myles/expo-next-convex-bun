@@ -14,10 +14,11 @@
   },
   "dependencies": {
     "@ianvs/prettier-plugin-sort-imports": "catalog:",
+    "@prettier/plugin-oxc": "^0.0.4",
     "prettier": "catalog:",
-    "prettier-plugin-tailwindcss": "catalog:",
     "prettier-plugin-classnames": "catalog:",
-    "prettier-plugin-merge": "catalog:"
+    "prettier-plugin-merge": "catalog:",
+    "prettier-plugin-tailwindcss": "catalog:"
   },
   "devDependencies": {
     "@acme/tsconfig": "workspace:*",
