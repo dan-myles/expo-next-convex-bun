@@ -14,19 +14,26 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup
+      - name: "Checkout repository (@v4)"
+        uses: actions/checkout@v4
+
+      - name: "Setup project & environment"
+        uses: ./.github/actions/setup
 
       - name: Lint workspace
         run: bun lint:ws
+
       - name: Lint source
         run: bun lint
 
   format:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup
+      - name: "Checkout repository (@v4)"
+        uses: actions/checkout@v4
+
+      - name: "Setup project & environment"
+        uses: ./.github/actions/setup
 
       - name: Run tests
         run: bun format
@@ -34,8 +41,11 @@ jobs:
   typecheck:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup
+      - name: "Checkout repository (@v4)"
+        uses: actions/checkout@v4
+
+      - name: "Setup project & environment"
+        uses: ./.github/actions/setup
 
       - name: Run tests
         run: bun typecheck
