@@ -27,8 +27,8 @@
     "@acme/prettier-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
     "@types/eslint__js": "8.42.3",
-    "@types/node": "^22.13.4",
-    "eslint": "catalog:",
+    "@types/node": "catalog:",
+    "eslint": "^9.31.0",
     "typescript": "catalog:"
   }
 }
