@@ -31,7 +31,8 @@
       "prettier-plugin-tailwindcss": "^0.6.14",
       "prettier-plugin-classnames": "^0.8.1",
       "prettier-plugin-merge": "^0.8.0",
-      "@ianvs/prettier-plugin-sort-imports": "^4.4.1"
+      "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
+      "eslint": "^9.31.0"
     },
     // ** Package Bundles **
     "catalogs": {
@@ -42,10 +43,10 @@
         "@types/react-dom": "^18.3.1"
       },
       "react19": {
-        "react": "^19.0.0",
-        "react-dom": "^19.0.0",
-        "@types/react": "^19.0.0",
-        "@types/react-dom": "^19.0.0"
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0",
+        "@types/react": "^19.1.0",
+        "@types/react-dom": "^19.1.0"
       }
     }
   },
@@ -55,13 +56,13 @@
 
   */
   "scripts": {
-    "build": "bun --filter '*' run build",
-    "dev": "bun --filter '*' run dev",
-    "typecheck": "bun --filter '*' run typecheck",
-    "format": "bun --filter '*' run format",
-    "format:fix": "bun --filter '*' run format:fix",
-    "lint": "bun --filter '*' run lint",
-    "lint:fix": "bun --filter '*' run lint:fix",
-    "clean": "git clean -xdf node_modules && pnpm --filter '*' run clean"
+    "build": "bun run --filter '*' build",
+    "dev": "bun run --filter '*' dev",
+    "typecheck": "bun run --filter '*' typecheck",
+    "format": "bun run --filter '*' format",
+    "format:fix": "bun run --filter '*' format:fix",
+    "lint": "bun run --filter '*' lint",
+    "lint:fix": "bun run --filter '*' lint:fix",
+    "clean": "git clean -xdf node_modules && bun run --filter '*' clean"
   }
 }
