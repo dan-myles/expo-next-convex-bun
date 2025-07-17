@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  pull_request:
+    branches: ["*"]
+  push:
+    branches: ["main"]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup project
+        uses: ./.github/actions/setup
+
+      - name: Lint workspace
+        run: bun run lint:ws
+
+      - name: Lint source
+        run: bun run lint:src
+
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup project
+        uses: ./.github/actions/setup
+
+      - name: Run tests
+        run: bun run format
+
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup project
+        uses: ./.github/actions/setup
+
+      - name: Build project
+        run: bun run typecheck

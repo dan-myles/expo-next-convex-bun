@@ -37,10 +37,13 @@
     "build": "bun run --filter '*' build",
     "dev": "bun run --filter '*' dev",
     "typecheck": "bun run --filter '*' typecheck",
+    "test": "bun run --filter '*' test",
     "format": "bun run --filter '*' format",
     "format:fix": "bun run --filter '*' format:fix",
     "lint": "bun run --filter '*' lint",
     "lint:fix": "bun run --filter '*' lint:fix",
+    "lint:ws": "bunx sherif@latest",
+    "lint:ws:fix": "bunx sherif@latest --fix",
     "clean": "git clean -xdf dist node_modules cache && bun run --filter '*' clean"
   }
 }

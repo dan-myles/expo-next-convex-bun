@@ -1,0 +1,21 @@
+name: 'Setup Project Environment'
+description: 'Setup Bun, install dependencies, and initialize environment'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: "Checkout repository"
+      uses: actions/checkout@v4
+
+    - name: "Install & setup Bun"
+      uses: oven-sh/setup-bun@v2
+      with:
+        bun-version: latest
+
+    - name: Initialize environment
+      shell: bash
+      run: cp .env.example .env
+
+    - name: Install dependencies
+      shell: bash
+      run: bun install
