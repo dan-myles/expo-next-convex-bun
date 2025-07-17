@@ -35,7 +35,7 @@ jobs:
       - name: "Setup project & environment"
         uses: ./.github/actions/setup
 
-      - name: Run tests
+      - name: Check formatting
         run: bun format
 
   typecheck:
@@ -47,5 +47,5 @@ jobs:
       - name: "Setup project & environment"
         uses: ./.github/actions/setup
 
-      - name: Run tests
+      - name: Run incremental passive build
         run: bun typecheck
