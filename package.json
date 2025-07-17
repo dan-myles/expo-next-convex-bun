@@ -65,6 +65,6 @@
     "format:fix": "bun run --filter '*' format:fix",
     "lint": "bun run --filter '*' lint",
     "lint:fix": "bun run --filter '*' lint:fix",
-    "clean": "git clean -xdf node_modules && bun run --filter '*' clean"
+    "clean": "git clean -xdf dist node_modules cache && bun run --filter '*' clean"
   }
 }

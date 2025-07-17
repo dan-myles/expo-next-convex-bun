@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "convex dev"
+    "dev": "convex dev",
+    "init": "convex dev --until-success"
   },
   "dependencies": {
     "convex": "^1.25.0"
