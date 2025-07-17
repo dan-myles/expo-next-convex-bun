@@ -1,0 +1,15 @@
+{
+  "name": "@acme/backend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "convex dev"
+  },
+  "dependencies": {
+    "convex": "^1.25.0"
+  },
+  "devDependencies": {
+    "typescript": "catalog:"
+  }
+}

@@ -9,11 +9,8 @@
     "./react": "./react.js"
   },
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch",
     "format": "prettier --check . --ignore-path ../../.prettierignore",
     "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
-    "typecheck": "tsc --noEmit --emitDeclarationOnly false",
     "clean": "git clean -xdf dist node_modules"
   },
   "dependencies": {
@@ -31,9 +28,6 @@
     "@types/eslint__js": "8.42.3",
     "@types/node": "^22.13.4",
     "eslint": "catalog:",
-    "prettier": "catalog:",
-    "@ianvs/prettier-plugin-sort-imports": "catalog:",
-    "prettier-plugin-tailwindcss": "catalog:",
     "typescript": "catalog:"
   }
 }

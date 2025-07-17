@@ -8,11 +8,8 @@
     ".": "./index.js"
   },
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch",
     "format": "prettier --check . --ignore-path ../../.prettierignore",
     "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
-    "typecheck": "tsc --noEmit",
     "clean": "git clean -xdf dist node_modules"
   },
   "dependencies": {
