@@ -1,4 +1,4 @@
-name: CI
+name: ci
 
 on:
   pull_request:
@@ -14,29 +14,28 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup project
-        uses: ./.github/actions/setup
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
 
       - name: Lint workspace
-        run: bun run lint:ws
-
+        run: bun lint:ws
       - name: Lint source
-        run: bun run lint:src
+        run: bun lint
 
   format:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup project
-        uses: ./.github/actions/setup
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
 
       - name: Run tests
-        run: bun run format
+        run: bun format
 
   typecheck:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup project
-        uses: ./.github/actions/setup
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
 
-      - name: Build project
-        run: bun run typecheck
+      - name: Run tests
+        run: bun typecheck

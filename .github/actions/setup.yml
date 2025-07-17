@@ -1,12 +1,9 @@
-name: 'Setup Project Environment'
+name: 'Setup & initialize project environment'
 description: 'Setup Bun, install dependencies, and initialize environment'
 
 runs:
   using: 'composite'
   steps:
-    - name: "Checkout repository"
-      uses: actions/checkout@v4
-
     - name: "Install & setup Bun"
       uses: oven-sh/setup-bun@v2
       with:
