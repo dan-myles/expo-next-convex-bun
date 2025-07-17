@@ -1,7 +1,7 @@
-import * as path from "node:path";
-import { includeIgnoreFile } from "@eslint/compat";
-import importPlugin from "eslint-plugin-import";
-import tseslint from "typescript-eslint";
+import * as path from "node:path"
+import { includeIgnoreFile } from "@eslint/compat"
+import importPlugin from "eslint-plugin-import"
+import tseslint from "typescript-eslint"
 
 export default tseslint.config(
   // Ignore files not tracked by VCS and any config files
@@ -36,4 +36,4 @@ export default tseslint.config(
     linterOptions: { reportUnusedDisableDirectives: true },
     languageOptions: { parserOptions: { projectService: true } },
   },
-);
+)
