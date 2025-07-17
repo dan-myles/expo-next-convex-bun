@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: .github/actions/setup
+      - uses: ./.github/actions/setup
 
       - name: Lint workspace
         run: bun lint:ws
@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: .github/actions/setup
+      - uses: ./.github/actions/setup
 
       - name: Run tests
         run: bun format
@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: .github/actions/setup
+      - uses: ./.github/actions/setup
 
       - name: Run tests
         run: bun typecheck
