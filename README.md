@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-To setup convex backend please run:
+To setup convex backend please run::
 
 ```sh
 bun run --filter @acme/backend init
