@@ -1,0 +1,67 @@
+{
+  /**
+
+    Settings & Configuration
+
+  */
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@acme/monorepo",
+  "private": true,
+  "type": "module",
+  "packageManager": "bun@1.2.18",
+  /**
+
+    General Workspace Configuration
+
+  */
+  "workspaces": {
+    // ** Module Definitions **
+    "packages": [
+      "apps/*",
+      "packages/*",
+      "tooling/*"
+    ],
+    // ** Global Packages **
+    "catalog": {
+      // General
+      "typescript": "^5.8.3",
+      "zod": "^4.0.5",
+      // Tooling
+      "prettier": "^3.6.2",
+      "prettier-plugin-tailwindcss": "^0.6.14",
+      "prettier-plugin-classnames": "^0.8.1",
+      "prettier-plugin-merge": "^0.8.0",
+      "@ianvs/prettier-plugin-sort-imports": "^4.4.1"
+    },
+    // ** Package Bundles **
+    "catalogs": {
+      "react18": {
+        "react": "18.3.1",
+        "react-dom": "18.3.1",
+        "@types/react": "^18.3.11",
+        "@types/react-dom": "^18.3.1"
+      },
+      "react19": {
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "@types/react": "^19.0.0",
+        "@types/react-dom": "^19.0.0"
+      }
+    }
+  },
+  /**
+
+    Scripts & Dependencies
+
+  */
+  "scripts": {
+    "build": "bun --filter '*' run build",
+    "dev": "bun --filter '*' run dev",
+    "typecheck": "bun --filter '*' run typecheck",
+    "format": "bun --filter '*' run format",
+    "format:fix": "bun --filter '*' run format:fix",
+    "lint": "bun --filter '*' run lint",
+    "lint:fix": "bun --filter '*' run lint:fix",
+    "clean": "git clean -xdf node_modules && pnpm --filter '*' run clean"
+  }
+}
