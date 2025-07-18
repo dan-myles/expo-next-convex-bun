@@ -1,40 +1,52 @@
-import * as path from "node:path"
+import path from "path"
 import { includeIgnoreFile } from "@eslint/compat"
-import importPlugin from "eslint-plugin-import"
 import tseslint from "typescript-eslint"
 
-export default tseslint.config(
-  // Ignore files not tracked by VCS and any config files
+export default [
   includeIgnoreFile(path.join(import.meta.dirname, "../../.gitignore")),
   includeIgnoreFile(path.join(import.meta.dirname, "../../.eslintignore")),
-  { ignores: ["**/*.config.*"] },
+  ...tseslint.configs.recommended,
   {
-    files: ["**/*.js", "**/*.ts", "**/*.tsx"],
-    plugins: {
-      import: importPlugin,
+    languageOptions: {
+      parser: tseslint.parser,
+      parserOptions: {
+        project: true,
+        tsconfigRootDir: process.cwd(),
+      },
     },
-    extends: [
-      ...tseslint.configs.recommended,
-      ...tseslint.configs.recommendedTypeChecked,
-      ...tseslint.configs.stylisticTypeChecked,
-    ],
+    files: ["**/*.ts", "**/*.tsx"],
     rules: {
-      "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/no-explicit-any": "warn",
+      "@typescript-eslint/prefer-nullish-coalescing": "error",
+      "@typescript-eslint/prefer-optional-chain": "error",
+      "@typescript-eslint/no-non-null-assertion": "warn",
+      "@typescript-eslint/no-import-type-side-effects": "error",
       "@typescript-eslint/consistent-type-imports": [
-        "warn",
-        { prefer: "type-imports", fixStyle: "separate-type-imports" },
+        "error",
+        { prefer: "type-imports" },
       ],
-      "@typescript-eslint/no-misused-promises": [
-        2,
-        { checksVoidReturn: { attributes: false } },
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        { argsIgnorePattern: "^_" },
       ],
-      "@typescript-eslint/consistent-type-definitions": ["error", "type"],
-      "@typescript-eslint/no-non-null-assertion": "error",
-      "import/consistent-type-specifier-style": ["error", "prefer-top-level"],
+
+      // General code quality rules
+      "no-unused-vars": "off",
+      "no-undef": "off",
+      "no-console": "warn",
+      "no-debugger": "error",
+      "prefer-const": "error",
+      "no-var": "error",
+      "object-shorthand": "error",
+      "prefer-template": "error",
+
+      // TypeScript-aware formatting rules
+      indent: "off",
+      quotes: "off",
+      semi: "off",
+      "comma-dangle": ["error", "always-multiline"],
+      "eol-last": ["error", "always"],
+      "no-trailing-spaces": "error",
     },
   },
-  {
-    linterOptions: { reportUnusedDisableDirectives: true },
-    languageOptions: { parserOptions: { projectService: true } },
-  },
-)
+]
