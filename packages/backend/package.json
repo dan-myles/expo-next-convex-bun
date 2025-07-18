@@ -6,10 +6,19 @@
   "type": "module",
   "prettier": "@acme/prettier-config",
   "exports": {
-    "./generated/*": "./convex/_generated/*"
+    "./api": {
+      "types": "./convex/_generated/api.d.ts",
+      "default": "./convex/_generated/api.ts"
+    },
+    "./server": {
+      "types": "./convex/_generated/server.d.ts",
+      "default": "./convex/_generated/server.ts"
+    },
+    "./dataModel": {
+      "types": "./convex/_generated/dataModel.d.ts"
+    }
   },
   "scripts": {
-    "init": "convex dev --until-success",
     "dev": "convex dev",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false",
     "test": "echo 'NO TESTS SETUP YET'",
@@ -17,10 +26,11 @@
     "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
-    "clean": "git clean -xdf dist node_modules .cache"
+    "clean": "git clean -xdf dist node_modules .cache",
+    "init": "convex dev --until-success"
   },
   "dependencies": {
-    "convex": "^1.25.0"
+    "convex": "catalog:"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",

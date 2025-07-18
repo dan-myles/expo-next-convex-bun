@@ -1,5 +1,18 @@
 # dependencies (bun install)
 node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# next.js
+/.next/
+.next/
+.vercel
+next-env.d.ts
 
 # output
 out

@@ -14,9 +14,10 @@
     "catalog": {
       "@types/bun": "^1.2.18",
       "@types/node": "^22.13.4",
+      "convex": "^1.25.0",
+      "zod": "^4.0.5",
       "eslint": "^9.31.0",
-      "typescript": "^5.8.3",
-      "zod": "^4.0.5"
+      "typescript": "^5.8.3"
     },
     "catalogs": {
       "react18": {
