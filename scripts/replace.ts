@@ -63,14 +63,7 @@ async function replaceInFile(
 
 async function checkMonorepoRoot(): Promise<boolean> {
   // Check for common monorepo indicators
-  const indicators = [
-    "package.json",
-    "bun.lockb",
-    "pnpm-workspace.yaml",
-    "lerna.json",
-    "nx.json",
-    "turbo.json",
-  ]
+  const indicators = ["bun.lock", "turbo.json"]
 
   return indicators.some((file) => existsSync(file))
 }
@@ -85,7 +78,7 @@ async function main() {
     console.log(
       "⚠️  Warning: This doesn't appear to be a monorepo root directory.",
     )
-    console.log("   (No package.json, bun.lockb, or workspace config found)\n")
+    console.log("   (No bun.lock or workspace config found)\n")
   }
 
   // Show warning and get confirmation
@@ -160,6 +153,7 @@ async function main() {
       ".next",
       "coverage",
       ".turbo",
+      ".cache",
     ],
     includeExtensions: [
       "ts",
@@ -169,8 +163,6 @@ async function main() {
       "json",
       "md",
       "mdx",
-      "vue",
-      "svelte",
       "yaml",
       "yml",
     ],
