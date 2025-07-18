@@ -7,12 +7,12 @@
 - **React 19:** Latest React with concurrent features
 - **Next.js 15:** Sample web app w/ reusable backend
 - **Tailwind CSS v4:** Modern CSS-first configuration
-- **React Native w/ Expo:** Mobile/native app with New Architecture
+- **React Native w/ Expo v53:** Mobile/native app with new architecture
 - **Convex:** Backend, database, server functions
 
 ## But why..? 👀
 
-This was created as the standard template that Convex provides is a bit outdated.
+This was created as the standard [standard](https://github.com/get-convex/turbo-expo-nextjs-clerk-convex-monorepo) that Convex provides is a bit outdated.
 This monorepo also includes the following:
 
 - Shared tooling (ESLint, Prettier, Typescript)
