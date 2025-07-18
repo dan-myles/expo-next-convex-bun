@@ -110,14 +110,14 @@ async function main() {
   }
 
   // Start all spinners
-  tasks[0].spinner.start(
+  tasks[0]?.spinner.start(
     "Cleaning root (git clean -xdf dist node_modules .cache)",
   )
 
   if (tasks.length > 1) {
     await new Promise((resolve) => setTimeout(resolve, 100))
     console.log()
-    tasks[1].spinner.start("Cleaning workspaces (turbo run clean)")
+    tasks[1]?.spinner.start("Cleaning workspaces (turbo run clean)")
   }
 
   // Run tasks in parallel
@@ -130,14 +130,14 @@ async function main() {
     const task = tasks[index]
     if (result.success) {
       if (result.name === "Root Clean") {
-        task.spinner.succeed(
+        task?.spinner.succeed(
           "Root clean completed - removed dist, node_modules, and .cache",
         )
       } else {
-        task.spinner.succeed("Workspace clean completed")
+        task?.spinner.succeed("Workspace clean completed")
       }
     } else {
-      task.spinner.fail(`${result.name} failed`)
+      task?.spinner.fail(`${result.name} failed`)
       console.log("   Error:", result.error)
     }
   })

@@ -47,7 +47,8 @@
     "lint:ws:fix": "bunx sherif@latest --fix",
     "clean": "bun scripts/clean",
     "clean:root": "git clean -xdf dist node_modules .cache .turbo",
-    "clean:ws": "turbo run clean"
+    "clean:ws": "turbo run clean",
+    "ci": "turbo run typecheck test format lint"
   },
   "devDependencies": {
     "turbo": "^2.5.5"

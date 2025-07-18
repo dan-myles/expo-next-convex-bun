@@ -1,4 +1,5 @@
 .sst
+.cache/
 _generated/
 .turbo/
 node_modules
