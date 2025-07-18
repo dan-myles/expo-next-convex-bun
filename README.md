@@ -12,7 +12,7 @@
 
 ## But why..? 👀
 
-This was created as the standard [standard](https://github.com/get-convex/turbo-expo-nextjs-clerk-convex-monorepo) that Convex provides is a bit outdated.
+This was created as the standard [template](https://github.com/get-convex/turbo-expo-nextjs-clerk-convex-monorepo) that Convex provides is a bit outdated.
 This monorepo also includes the following:
 
 - Shared tooling (ESLint, Prettier, Typescript)
