@@ -1,8 +1,19 @@
 {
   "$schema": "https://turborepo.com/schema.json",
+  "ui": "tui",
   "tasks": {
+    "build": {
+      "dependsOn": ["^build"]
+    },
+    "dev": {
+      "persistent": true,
+      "cache": false
+    },
     "typecheck": {
       "dependsOn": ["^typecheck"]
+    },
+    "test": {
+      "dependsOn": ["^test"]
     },
     "format": {
       "dependsOn": ["^format"]
@@ -18,10 +29,6 @@
     },
     "clean": {
       "dependsOn": ["^clean"]
-    },
-    "dev": {
-      "persistent": true,
-      "cache": false
     }
   }
 }
