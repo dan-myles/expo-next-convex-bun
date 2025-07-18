@@ -159,6 +159,8 @@ async function main() {
       "ts",
       "tsx",
       "js",
+      "cjs",
+      "mjs",
       "jsx",
       "json",
       "md",
