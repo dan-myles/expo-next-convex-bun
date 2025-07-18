@@ -10,6 +10,12 @@
     "format:fix": {
       "dependsOn": ["^format:fix"]
     },
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "lint:fix": {
+      "dependsOn": ["^lint:fix"]
+    },
     "clean": {
       "dependsOn": ["^clean"]
     },
