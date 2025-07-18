@@ -216,13 +216,6 @@ async function main() {
     console.log(`   Total replacements: ${totalMatches}`)
     console.log(`   Pattern: @${options.oldPrefix}/* → @${options.newPrefix}/*`)
 
-    if (results.length > 0) {
-      console.log(`\n📋 Changed files:`)
-      results.forEach(({ file, matches }) => {
-        console.log(`   ${file} (${matches} matches)`)
-      })
-    }
-
     if (totalMatches > 0) {
       console.log(`\n✨ Done! Remember to test your changes and commit them.`)
     } else {
