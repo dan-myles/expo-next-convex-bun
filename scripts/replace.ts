@@ -225,6 +225,7 @@ async function main() {
 
     if (totalMatches > 0) {
       console.log(`\n✨ Done! Remember to test your changes and commit them.`);
+      console.log(`\n💡 P.S. Run 'bun clean' and 'bun install' before committing.`)
     } else {
       console.log(`\n🤷 No matches found for @${options.oldPrefix}/*`);
     }
