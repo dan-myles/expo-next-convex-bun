@@ -88,9 +88,6 @@
     "tooling/typescript": {
       "name": "@acme/tsconfig",
       "version": "0.1.0",
-      "devDependencies": {
-        "@acme/prettier-config": "workspace:*",
-      },
     },
   },
   "catalog": {

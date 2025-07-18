@@ -35,17 +35,19 @@
     }
   },
   "scripts": {
-    "build": "bun run --filter '*' build",
-    "dev": "bun run --filter '*' dev",
-    "typecheck": "bun run --filter '*' typecheck",
-    "test": "bun run --filter '*' test",
-    "format": "bun run --filter '*' format",
-    "format:fix": "bun run --filter '*' format:fix",
-    "lint": "bun run --filter '*' lint",
-    "lint:fix": "bun run --filter '*' lint:fix",
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "format": "turbo run format",
+    "format:fix": "turbo run format:fix",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
     "lint:ws": "bunx sherif@latest",
     "lint:ws:fix": "bunx sherif@latest --fix",
-    "clean": "git clean -xdf dist node_modules cache && bun run --filter '*' clean"
+    "clean": "bun scripts/clean",
+    "clean:root": "git clean -xdf dist node_modules .cache .turbo",
+    "clean:ws": "turbo run clean"
   },
   "devDependencies": {
     "turbo": "^2.5.5"

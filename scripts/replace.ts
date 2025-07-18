@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 import { existsSync } from "fs"
 import { readdir, readFile, stat, writeFile } from "fs/promises"
 import { join } from "path"

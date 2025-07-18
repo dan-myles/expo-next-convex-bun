@@ -4,6 +4,15 @@
     "typecheck": {
       "dependsOn": ["^typecheck"]
     },
+    "format": {
+      "dependsOn": ["^format"]
+    },
+    "format:fix": {
+      "dependsOn": ["^format:fix"]
+    },
+    "clean": {
+      "dependsOn": ["^clean"]
+    },
     "dev": {
       "persistent": true,
       "cache": false

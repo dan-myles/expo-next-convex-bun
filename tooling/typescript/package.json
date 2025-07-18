@@ -3,16 +3,10 @@
   "name": "@acme/tsconfig",
   "private": true,
   "version": "0.1.0",
-  "prettier": "@acme/prettier-config",
   "files": [
     "*.json"
   ],
   "scripts": {
-    "format": "prettier --check . --ignore-path ../../.prettierignore",
-    "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
-    "clean": "git clean -xdf dist node_modules .cache"
-  },
-  "devDependencies": {
-    "@acme/prettier-config": "workspace:*"
+    "clean": "git clean -xdf dist node_modules .cache .turbo"
   }
 }

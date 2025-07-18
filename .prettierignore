@@ -1,5 +1,6 @@
 .sst
 _generated/
+.turbo/
 node_modules
 .DS_Store
 *.pem
