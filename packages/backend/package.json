@@ -19,9 +19,10 @@
     }
   },
   "scripts": {
+    "build": "tsc",
     "dev": "convex dev",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false",
-    "test": "echo 'NO TESTS SETUP YET'",
+    "test": "echo 'NO TEST SUITE CONFIGURED'",
     "format": "prettier --check . --ignore-path ../../.prettierignore",
     "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
     "lint": "eslint",

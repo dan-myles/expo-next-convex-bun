@@ -14,7 +14,6 @@
     "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
     "clean": "git clean -xdf dist node_modules .cache"
   },
-  "dependencies": {},
   "devDependencies": {
     "@acme/prettier-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",

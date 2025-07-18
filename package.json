@@ -46,5 +46,8 @@
     "lint:ws": "bunx sherif@latest",
     "lint:ws:fix": "bunx sherif@latest --fix",
     "clean": "git clean -xdf dist node_modules cache && bun run --filter '*' clean"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.5"
   }
 }
