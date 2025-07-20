@@ -37,6 +37,8 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
+    "dev:web": "turbo run dev --filter=@acme/web...",
+    "dev:native": "turbo run dev --filter=@acme/native...",
     "typecheck": "turbo run typecheck",
     "test": "turbo run test",
     "format": "turbo run format",
