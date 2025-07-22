@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { useMutation, useQuery } from "convex/react"
+
 import { api } from "@acme/backend/api"
 
 export function TaskList() {
@@ -20,8 +21,8 @@ export function TaskList() {
   }
 
   return (
-    <div className="w-full max-w-md mx-auto">
-      <h1 className="text-2xl font-bold mb-6 text-center">Task List</h1>
+    <div className="mx-auto w-full max-w-md">
+      <h1 className="mb-6 text-center text-2xl font-bold">Task List</h1>
 
       <form onSubmit={handleSubmit} className="mb-6">
         <div className="flex gap-2">
@@ -30,11 +31,15 @@ export function TaskList() {
             value={newTask}
             onChange={(e) => setNewTask(e.target.value)}
             placeholder="Add a new task..."
-            className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800"
+            className="flex-1 rounded-md border border-gray-300 px-3 py-2
+              focus:ring-2 focus:ring-blue-500 focus:outline-none
+              dark:border-gray-600 dark:bg-gray-800"
           />
           <button
             type="submit"
-            className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="rounded-md bg-blue-500 px-4 py-2 text-white
+              hover:bg-blue-600 focus:ring-2 focus:ring-blue-500
+              focus:outline-none"
           >
             Add
           </button>
@@ -45,18 +50,19 @@ export function TaskList() {
         {tasks?.map((task: any) => (
           <div
             key={task._id}
-            className="flex items-center gap-3 p-3 border border-gray-200 rounded-md dark:border-gray-700"
+            className="flex items-center gap-3 rounded-md border border-gray-200
+              p-3 dark:border-gray-700"
           >
             <input
               type="checkbox"
               checked={task.completed}
               onChange={() => toggleTask({ id: task._id })}
-              className="w-4 h-4"
+              className="h-4 w-4"
             />
             <span
               className={`flex-1 ${
                 task.completed
-                  ? "line-through text-gray-500"
+                  ? "text-gray-500 line-through"
                   : "text-gray-900 dark:text-gray-100"
               }`}
             >
@@ -64,14 +70,17 @@ export function TaskList() {
             </span>
             <button
               onClick={() => removeTask({ id: task._id })}
-              className="px-2 py-1 text-red-500 hover:bg-red-50 rounded dark:hover:bg-red-900/20"
+              className="rounded px-2 py-1 text-red-500 hover:bg-red-50
+                dark:hover:bg-red-900/20"
             >
               Delete
             </button>
           </div>
         ))}
         {tasks?.length === 0 && (
-          <p className="text-center text-gray-500 py-8">No tasks yet. Add one above!</p>
+          <p className="py-8 text-center text-gray-500">
+            No tasks yet. Add one above!
+          </p>
         )}
       </div>
     </div>
