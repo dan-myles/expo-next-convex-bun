@@ -1,5 +1,5 @@
-import { TaskList } from "../components/task-list";
+import { TaskList } from "../components/task-list"
 
 export default function Index() {
-  return <TaskList />;
+  return <TaskList />
 }
