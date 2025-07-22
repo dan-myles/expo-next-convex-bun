@@ -93,7 +93,10 @@ cd apps/web
 cp .env.example .env.local
 
 # apps/native/.env.local
-EXPO_PUBLIC_CONVEX_URL=your_convex_deployment_url # This will be auto-generated!
+EXPO_PUBLIC_CONVEX_URL=your_convex_deployment_url
+
+# apps/web/.env.local
+NEXT_PUBLIC_CONVEX_URL=your_convex_deployment_url
 ```
 
 #### 5. Start Development
