@@ -15,13 +15,13 @@
     "clean": "git clean -xdf dist node_modules .cache .turbo .next"
   },
   "dependencies": {
+    "@acme/backend": "workspace:*",
     "convex": "catalog:",
     "next": "15.4.1",
     "react": "catalog:react19",
     "react-dom": "catalog:react19"
   },
   "devDependencies": {
-    "@acme/backend": "workspace:*",
     "@acme/eslint-config": "workspace:*",
     "@acme/prettier-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
