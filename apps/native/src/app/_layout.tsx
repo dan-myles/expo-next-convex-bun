@@ -6,6 +6,8 @@ import FontAwesome from "@expo/vector-icons/FontAwesome"
 
 import "react-native-reanimated"
 
+import { ConvexProvider } from "@/components/providers/convex.provider"
+
 export { ErrorBoundary } from "expo-router"
 
 SplashScreen.preventAutoHideAsync()
@@ -31,5 +33,9 @@ export default function RootLayout() {
     return null
   }
 
-  return <Stack />
+  return (
+    <ConvexProvider>
+      <Stack />
+    </ConvexProvider>
+  )
 }

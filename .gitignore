@@ -1,5 +1,6 @@
 # dependencies (bun install)
 node_modules
+expo-env.d.ts
 .turbo/
 /.pnp
 .pnp.*

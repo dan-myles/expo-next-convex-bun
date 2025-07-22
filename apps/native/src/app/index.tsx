@@ -1,5 +1,5 @@
-import { Text } from "react-native"
+import { TaskList } from "../components/task-list";
 
 export default function Index() {
-  return <Text>Welcome to your home page!</Text>
+  return <TaskList />;
 }
