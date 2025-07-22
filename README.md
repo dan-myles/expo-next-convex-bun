@@ -18,7 +18,7 @@
 
 ## Showcase
 
-![Demo](https://i.imgur.com/WZDJSpF.gif)
+![Demo](./.github/showcase.gif)
 
 ## Features ✨
 
