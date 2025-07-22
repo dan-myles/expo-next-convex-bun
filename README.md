@@ -18,39 +18,106 @@
 
 ## Showcase
 
-![Demo](https://private-user-images.githubusercontent.com/79137382/469291126-87ccfe46-526a-4b6f-8099-6aafa38fa79a.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTMxOTgzODEsIm5iZiI6MTc1MzE5ODA4MSwicGF0aCI6Ii83OTEzNzM4Mi80NjkyOTExMjYtODdjY2ZlNDYtNTI2YS00YjZmLTgwOTktNmFhZmEzOGZhNzlhLmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA3MjIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNzIyVDE1MjgwMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTFiYWZhNjZkZmZmZjk4MDRkODYwMzA2MDk3NjNlOTg1ZTJiZTQ2OWJjOTE3ODBmZDkyNjVhOThjMjE5ZGY3MGImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.b-Jp9Z3gq99evXXgVB_iqDlOh38w0ZS6KYRukb9FdgQ)
+![Demo](https://i.imgur.com/WZDJSpF.gif)
 
-- **Bun:** Package manager & runtime
-- **Turborepo:** Monorepo management & task caching
-- **React 19:** Latest React with concurrent features
-- **Next.js 15:** Sample web app w/ reusable backend
-- **Tailwind CSS v4:** Modern CSS-first configuration
-- **React Native w/ Expo v53:** Mobile/native app with new architecture
-- **Convex:** Backend, database, server functions
+## Features ✨
 
-## But why..? 👀
+```
+├── apps/
+│   ├── web/          # Next.js v15 (App Router)
+│   └── native/       # Expo v53 React Native
+├── packages/
+│   └── backend/      # Convex: Database, Auth, Functions
+├── tooling/          # Shared ESLint, Prettier, TypeScript Configuration
+└── scripts/          # Utility Scripts
+```
 
-This was created as the standard [template](https://github.com/get-convex/turbo-expo-nextjs-clerk-convex-monorepo) that Convex provides is a bit outdated.
-This monorepo also includes the following:
+- **🚀 Modern Stack**: Latest versions of **React 19**, **Next.js 15**, **Expo v53**
+- **⚡ Fast Development**: **Bun** for package management and **Turborepo** for caching
+- **📱 Cross-Platform**: Build for mobile & native with the same backend!
+- **🔄 Real-time Backend**: **Convex** for database, auth, and server functions
+- **🎨 Beautiful UI**: **Tailwind CSS v4** with modern styling
+- **🛠️ Developer Experience**: Shared tooling, TypeScript, ESLint, Prettier
+- **🤖 AI-Ready**: AGENTS.md files for AI workflows (Cursor, Opencode, etc.)
+- **🔧 CI/CD Ready**: GitHub Actions with Turborepo integration
 
-- Shared tooling (ESLint, Prettier, Typescript)
-- Package.json based workspaces
-- Organized exports (don't export the whole module!)
-- Shared scripts folder
-- Updated packages (Latest ESLint, Prettier, Next, etc.)
-- AGENTS.md files for agentic AI workflows (Cursor, Opencode, etc.)
-- Github CI workflows that use Turborepo
+## Why This Template? 🤔
 
-## Getting Started
+Built because the standard Convex template was outdated. This includes:
 
-To setup convex backend please run::
+- **Latest packages** and modern configurations
+- **Organized exports** (no whole module exports)
+- **Shared tooling** across all apps
+- **AI workflow ready** with AGENTS.md files
+- **Production-ready** CI/CD setup
 
-```sh
+## Quick Start 🚀
+
+#### Prerequisites
+
+- [Bun](https://bun.sh/) (latest version)
+- [Node.js](https://nodejs.org/) (latest LTS)
+
+#### 1. Clone & Install
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/turbo-expo-next-convex-bun.git
+cd turbo-expo-next-convex-bun
+
+# Install dependencies
+bun install
+```
+
+#### 2. Setup Your Namespace
+
+Replace the default `@acme` namespace with your own:
+
+```bash
+bun scripts/replace.ts
+```
+
+#### 3. Initialize Convex Backend
+
+```bash
+# Setup Convex (creates .env files and initializes database)
 bun run --filter @acme/backend init
 ```
 
-Finally, make sure to run the following script for your own namespace:
+#### 4. Setup Environment Variables
 
-```sh
-bun scripts/replace.ts
+Create `.env.local` files in each app:
+
+```bash
+# This is an example, each app will have different environments
+# This must be done for each app!
+cd apps/web
+cp .env.example .env.local
+
+# apps/native/.env.local
+EXPO_PUBLIC_CONVEX_URL=your_convex_deployment_url # This will be auto-generated!
 ```
+
+#### 5. Start Development
+
+```bash
+# Start all apps in development mode
+bun dev
+
+# Or start individual apps
+bun dev:web      # Next.js web app
+bun dev:native   # Expo mobile app
+```
+
+Visit:
+
+- **Web App**: http://localhost:3000
+- **Mobile App**: Use Expo Go app to scan QR code
+
+## Deployment 🚀
+
+- Connect Vercel to your GitHub repo for automatic web deployments
+- Configure EAS with GitHub Actions for mobile app releases
+- Set up Convex production deployment keys in GitHub Secrets
+
+> A full writeup on this will be coming soon :)
