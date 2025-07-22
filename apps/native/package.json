@@ -15,7 +15,7 @@
     "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "clean": "git clean -xdf dist node_modules .cache .turbo .next"
+    "clean": "git clean -xdf dist node_modules .cache .turbo .next .expo"
   },
   "jest": {
     "preset": "jest-expo"

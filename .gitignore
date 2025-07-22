@@ -19,6 +19,7 @@ next-env.d.ts
 out
 dist
 *.tgz
+.expo/
 
 # code coverage
 coverage
