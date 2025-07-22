@@ -120,5 +120,3 @@ Visit:
 - Connect Vercel to your GitHub repo for automatic web deployments
 - Configure EAS with GitHub Actions for mobile app releases
 - Set up Convex production deployment keys in GitHub Secrets
-
-> A full writeup on this will be coming soon :)
